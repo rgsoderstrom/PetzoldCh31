@@ -1,0 +1,30 @@
+﻿<Window x:Class="PictureAndFrame.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <Image Stretch="None">
+        <Image.Source>
+            <DrawingImage>
+                <DrawingImage.Drawing>
+                    <DrawingGroup>
+                        <!-- bitmap image -->
+                        <ImageDrawing Rect="5 5 600 480" ImageSource="C:\Users\Randy\Documents\FromWork\MoreToHome\squimMove14 068.jpg"/>
+                        
+                        <!-- dotted pen -->
+                        <GeometryDrawing>
+                            <GeometryDrawing.Pen>
+                                <Pen Brush="DodgerBlue" Thickness="3">
+                                </Pen>  
+                            </GeometryDrawing.Pen>
+
+                            <GeometryDrawing.Geometry>
+                                <RectangleGeometry Rect="50 100 200 140"/>
+                            </GeometryDrawing.Geometry>
+                        </GeometryDrawing>
+                        
+                    </DrawingGroup>
+                </DrawingImage.Drawing>
+            </DrawingImage>
+        </Image.Source>
+    </Image>
+</Window>
