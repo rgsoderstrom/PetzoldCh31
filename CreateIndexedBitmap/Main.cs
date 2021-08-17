@@ -6,8 +6,10 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
-using System.Drawing;  // must add reference
-using System.Drawing.Imaging;
+//using System.Drawing;  // must add reference
+//using System.Drawing.Imaging;
+
+using Color = System.Windows.Media.Color;
 
 namespace CreateIndexedBitmap
 {
@@ -26,13 +28,29 @@ namespace CreateIndexedBitmap
             {
                 Title = "A Bitmap";
 
-                // palette
-                List<System.Windows.Media.Color> colors = new List<System.Windows.Media.Color> ();
 
-                for (int i = 0; i<256; i++)
-                     colors.Add (System.Windows.Media.Color.FromRgb (Colormap.colors [i, 0], Colormap.colors [i, 1], Colormap.colors [i, 2]));
 
-                BitmapPalette palette = new BitmapPalette (colors);
+                Rect rect = new Rect (new Point (100, 100), new Point (400, 300));
+                RectangleGeometry rg = new RectangleGeometry (rect);
+
+            // construct objects top-down
+                System.Windows.Shapes.Path path = new System.Windows.Shapes.Path ();
+                path.Data = rg;
+
+                path.Fill = null;// Brushes.Transparent;  // null doesn't capture mouse clicks in fill region
+                path.Stroke = Brushes.Black;
+                path.StrokeThickness = 1;
+
+               
+                Content = path;
+
+
+
+
+
+
+
+                BitmapPalette palette = new BitmapPalette (Colormap.colors);
 
                 // bitmap bits
                 byte[] array = new byte[256 * 256];
@@ -59,12 +77,16 @@ namespace CreateIndexedBitmap
 
                
                 // Image
-                System.Windows.Controls.Image img = new System.Windows.Controls.Image ();
+                Image img = new Image ();
                 img.Source = bitmap;
+                //img.Stretch = Stretch.Fill;
                 img.Stretch = Stretch.None;
 
+                ImageBrush ib = new ImageBrush (img.Source);
+                path.Fill = ib;
+
                 // Window
-                Content = img;
+                //Content = img;
             }
 
             catch (Exception ex)
