@@ -24,18 +24,13 @@ namespace CreateIndexedBitmap
         {
             try
             {
-                Title = "Bitmap";
+                Title = "A Bitmap";
 
                 // palette
                 List<System.Windows.Media.Color> colors = new List<System.Windows.Media.Color> ();
-/**
-                for (int i=0; i<256; i+=17)
-                    for (int j=0; j<256; j+=17)
-                        colors.Add (Color.FromRgb ((byte) i, 0, (byte) j));
-**/
 
-                for (int i=0; i<256; i++)
-                    colors.Add (System.Windows.Media.Color.FromRgb ((byte) i, (byte) i, (byte) i));
+                for (int i = 0; i<256; i++)
+                     colors.Add (System.Windows.Media.Color.FromRgb (Colormap.colors [i, 0], Colormap.colors [i, 1], Colormap.colors [i, 2]));
 
                 BitmapPalette palette = new BitmapPalette (colors);
 
@@ -45,20 +40,22 @@ namespace CreateIndexedBitmap
                 double maxR = Math.Sqrt (2 * 256 * 256);
 
                 for (int x=0; x<256; x++)
+                {
                     for (int y=0; y<256; y++)
                     {
                         double R = Math.Sqrt ((double) x * x + y * y);
                         int r = (int) (255 * R / maxR);
                         array [256 * y + x] = (byte) (r);
                     }
+                }
 
                 array [256 * 10 + 10] = 255;
                 array [256 * 10 + 11] = 255;
                 array [256 * 11 + 10] = 255;
                 array [256 * 11 + 11] = 255;
 
-  //            BitmapSource bitmap = BitmapSource.Create (256, 256, 96, 96, PixelFormats.Indexed8, palette, array, 256);
-                BitmapSource bitmap = BitmapSource.Create (256, 256, 96, 96, PixelFormats.Gray8, null, array, 256);
+                BitmapSource bitmap = BitmapSource.Create (256, 256, 96, 96, PixelFormats.Indexed8, palette, array, 256);
+              //BitmapSource bitmap = BitmapSource.Create (256, 256, 96, 96, PixelFormats.Gray8, palette, array, 256);
 
                
                 // Image
