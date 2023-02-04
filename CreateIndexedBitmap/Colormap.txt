@@ -1,6 +1,6 @@
 ﻿
 % https://jdherman.github.io/colormap/
-% preset "redblue" colormap
+% "redblue" colormap
 
 95 0 0
 97 0 0

@@ -33,11 +33,10 @@ namespace CreateIndexedBitmap
                 Rect rect = new Rect (new Point (100, 100), new Point (400, 300));
                 RectangleGeometry rg = new RectangleGeometry (rect);
 
-            // construct objects top-down
                 System.Windows.Shapes.Path path = new System.Windows.Shapes.Path ();
                 path.Data = rg;
 
-                path.Fill = null;// Brushes.Transparent;  // null doesn't capture mouse clicks in fill region
+                path.Fill = null; // see below
                 path.Stroke = Brushes.Black;
                 path.StrokeThickness = 1;
 
@@ -54,7 +53,7 @@ namespace CreateIndexedBitmap
 
                 // bitmap bits
                 byte[] array = new byte[256 * 256];
-                    
+
                 double maxR = Math.Sqrt (2 * 256 * 256);
 
                 for (int x=0; x<256; x++)

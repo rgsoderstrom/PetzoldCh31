@@ -12,6 +12,7 @@ namespace CreateIndexedBitmap
         static Colormap ()
         {
             StreamReader file = new StreamReader (@"..\..\Colormap.txt");
+            bool reverseFlag = true;
             string raw;
 
             while ((raw = file.ReadLine ()) != null)
@@ -35,7 +36,9 @@ namespace CreateIndexedBitmap
             }
 
             file.Close ();
-            colors.Reverse ();
+
+            if (reverseFlag)
+                colors.Reverse ();
         }
     }
 }
