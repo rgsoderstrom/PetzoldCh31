@@ -26,7 +26,7 @@ namespace PictureAndFrame2
             try
             {
              // load image
-                BitmapImage bmi = new BitmapImage (new Uri (@"D:\FromWork\MoreToHome\squimMove14 068.jpg"));
+                BitmapImage bmi = new BitmapImage (new Uri (@"C:\Users\rgsod\source\repos\PetzoldCh31\20220603_093205.jpg"));
 
                 double aa = bmi.DpiX;
                 double bb = bmi.DpiY;
