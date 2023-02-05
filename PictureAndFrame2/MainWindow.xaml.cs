@@ -11,6 +11,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Xml.Linq;
 
 namespace PictureAndFrame2
 {
@@ -25,8 +26,9 @@ namespace PictureAndFrame2
 
             try
             {
-             // load image
-                BitmapImage bmi = new BitmapImage (new Uri (@"C:\Users\rgsod\source\repos\PetzoldCh31\20220603_093205.jpg"));
+                // load image
+                BitmapImage bmi = new BitmapImage (new Uri (@"..\..\..\20220603_093205.jpg", UriKind.Relative));
+                //BitmapImage bmi = new BitmapImage (new Uri (@"C:\Users\rgsod\Documents\Visual Studio 2022\Projects\Petzold\Chap31\20220603_093205.jpg"));
 
                 double aa = bmi.DpiX;
                 double bb = bmi.DpiY;
