@@ -28,8 +28,6 @@ namespace CreateIndexedBitmap
             {
                 Title = "A Bitmap";
 
-
-
                 Rect rect = new Rect (new Point (100, 100), new Point (400, 300));
                 RectangleGeometry rg = new RectangleGeometry (rect);
 
@@ -42,12 +40,6 @@ namespace CreateIndexedBitmap
 
                
                 Content = path;
-
-
-
-
-
-
 
                 BitmapPalette palette = new BitmapPalette (Colormap.colors);
 
