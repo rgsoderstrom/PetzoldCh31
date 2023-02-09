@@ -63,8 +63,8 @@ namespace CreateIndexedBitmap
                 array [256 * 11 + 10] = 255;
                 array [256 * 11 + 11] = 255;
 
-                BitmapSource bitmap = BitmapSource.Create (256, 256, 96, 96, PixelFormats.Indexed8, palette, array, 256);
-              //BitmapSource bitmap = BitmapSource.Create (256, 256, 96, 96, PixelFormats.Gray8, palette, array, 256);
+              //BitmapSource bitmap = BitmapSource.Create (256, 256, 96, 96, PixelFormats.Indexed8, palette, array, 256);
+                BitmapSource bitmap = BitmapSource.Create (256, 256, 96, 96, PixelFormats.Gray8, palette, array, 256);
 
                
                 // Image
