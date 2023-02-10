@@ -40,7 +40,7 @@ namespace DrawGraphicsOnBitmap2
                 // DrawingVisual
                 DrawingVisual vis = new DrawingVisual ();
                 DrawingContext dc = vis.RenderOpen ();
-                dc.DrawRoundedRectangle (null, new Pen (Brushes.Red, 7), new Rect (150, 300, 145, 150), 5, 5);
+                dc.DrawRoundedRectangle (null, new Pen (Brushes.Red, 7), new Rect (550, 650, 145, 150), 5, 5);
                 dc.Close ();
 
              // render
