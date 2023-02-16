@@ -27,7 +27,8 @@ namespace DrawGraphicsOnBitmap2
                 Grid grid = new Grid ();
 
              // load image
-                BitmapImage bmi = new BitmapImage (new Uri (@"D:\FromWork\MoreToHome\squimMove14 068.jpg"));
+                //BitmapImage bmi = new BitmapImage (new Uri (@"D:\FromWork\MoreToHome\squimMove14 068.jpg"));
+                BitmapImage bmi = new BitmapImage (new Uri (@"norway.jpg", UriKind.Relative));
 
                 double aa = bmi.DpiX;
                 double bb = bmi.DpiY;
