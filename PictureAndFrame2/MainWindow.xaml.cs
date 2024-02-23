@@ -42,7 +42,7 @@ namespace PictureAndFrame2
 
 
              // copy pixels from a small area
-                Int32Rect sourceRect = new Int32Rect (100, 1400, 500, 500);
+                Int32Rect sourceRect = new Int32Rect (150, 1700, 500, 500);
                 UInt32[] pixels = new UInt32 [500 * 500];
                 bmi.CopyPixels (sourceRect, pixels, 500 * sizeof (UInt32), 0);
 
